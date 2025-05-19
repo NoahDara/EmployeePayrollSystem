@@ -35,9 +35,19 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount', 
     
+    # local apps
     'accounts.apps.AccountsConfig',
     'audit.apps.AuditConfig',
+    'bank.apps.BankConfig',
+    'contracts.apps.ContractsConfig',
     'dashboard.apps.DashboardConfig',
+    'demographics.apps.DemographicsConfig',
+    'divisions.apps.DivisionsConfig',
+    'employees.apps.EmployeesConfig',
+    'employment.apps.EmploymentConfig',
+    'organization.apps.OrganizationConfig',
+    'positions.apps.PositionsConfig',
+    'profiles.apps.ProfilesConfig',
     
     #3rd party apps
     "debug_toolbar",
