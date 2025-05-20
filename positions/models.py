@@ -17,10 +17,11 @@ class JobGrade(models.Model):
 
 class JobTitle(models.Model):
     job_grade = models.ForeignKey(JobGrade, on_delete=models.SET_NULL, null=True, related_name='job_titles')
+    section = models.ForeignKey("divisions.Section", on_delete=models.SET_NULL, null=True, related_name='job_titles')
+    reports_to = models.ForeignKey("self", on_delete=models.SET_NULL, null=True, related_name='job_titles')
     title = models.CharField(max_length=100, unique=True)
     code = models.CharField(max_length=10, unique=True)
     description = models.TextField(blank=True)
-    is_supervisory = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

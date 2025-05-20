@@ -12,7 +12,7 @@ class BankAccount(models.Model):
         ('current', 'Current'),
         ('other', 'Other')
     ])
-    currency = models.CharField(max_length=10, default="ZWL")
+    currency =  models.ForeignKey("currency.Currency", on_delete=models.CASCADE, related_name='banks')
 
     # Generic relation for reusability
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
@@ -21,6 +21,9 @@ class BankAccount(models.Model):
 
     is_primary = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
+    
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

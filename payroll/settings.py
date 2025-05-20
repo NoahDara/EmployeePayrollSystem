@@ -39,18 +39,22 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'audit.apps.AuditConfig',
     'bank.apps.BankConfig',
+    'changelogs.apps.ChangelogsConfig',
     'contracts.apps.ContractsConfig',
+    'currency.apps.CurrencyConfig',
     'dashboard.apps.DashboardConfig',
     'demographics.apps.DemographicsConfig',
     'divisions.apps.DivisionsConfig',
     'employees.apps.EmployeesConfig',
     'employment.apps.EmploymentConfig',
+    'notification.apps.NotificationConfig',
     'organization.apps.OrganizationConfig',
     'positions.apps.PositionsConfig',
     'profiles.apps.ProfilesConfig',
     
     #3rd party apps
     "debug_toolbar",
+    'django_countries',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
